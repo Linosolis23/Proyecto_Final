@@ -32,14 +32,8 @@
             <span class="icon"><i class="fa fa-lock"></i></span>
             <input type="password" name="con" placeholder="Contrase&ntilde;a" required/>
         </div>
-
-        <!-- <div class="input-row">
-            <input type="radio" name="rol" value="p" required>Profesor<br>
-            <input type="radio" name="rol" value="a" required>Alumno
-        </div> -->
-
         <div class="submit-row">
-            <input type="submit" value="Iniciar Sesi&oacute;n &raquo;"/>
+            <input type="submit" value="Iniciar Sesion"/>
         </div>
         
 
