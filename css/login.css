@@ -1,0 +1,7 @@
+
+.container {
+    margin: 10px auto;
+    display: table;
+    max-width: 800px;
+    width: 100%;
+}

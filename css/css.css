@@ -1,0 +1,60 @@
+body{
+    background-color: black;
+}
+
+section{
+    width: auto;
+    height: 1000px;
+    background-color:coral;
+    text-align: center;
+
+}
+.login{
+    width: 600px;
+    height: 600px;
+}
+ ul {
+    padding: 0;
+}
+/*Logo*/
+header h2 {
+margin: 10px;
+font-size: 40px;
+text-align: center;
+color: white;
+}
+
+.container {
+    margin: 10px auto;
+    display: table;
+    max-width: 1500px;
+    width: 100%;
+}
+
+nav.menu {
+    background: coral;
+}
+.menu > ul > li {
+    display: inline-block;
+    line-height: 45px;
+    
+}
+.menu > ul li a, .xs-menu li a {
+    text-decoration: none;
+    color: white;
+     display:block;
+     padding: 0px 24px;
+}
+.menu > ul li a:hover {
+    background:#444;
+}
+.active{
+    background:#444 ;
+    
+}
+#login{
+    float:right;
+}
+.posts{
+    color:red
+}
