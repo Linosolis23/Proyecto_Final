@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php 
+require 'lib/consultas.php';
+?>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +10,7 @@
     <title>Fororium</title>
     
     <!-- CSS only -->
-<link rel="stylesheet" href="../css/css.css">
+    <link rel="stylesheet" href="../css/css.css">
     <link rel="stylesheet" href="../css/login.css">
 </head>
 
@@ -22,11 +25,14 @@
 <form action="php/proceso_registrar.php" method="post">
         <h1>registrarse</h1>
         
-        <div><label >Usuario</label></div>
-        <input type="email" name="email" placeholder="Email" required/>
+        <div><label for="email">Email</label></div>
+        <input type="email" name="email" id="email" required />
 
-        <div><label>Contraseña</label></div>
-        <input type="password" name="password" placeholder="password" required/>   
+        <div><label for="pass">Contraseña</label></div>
+        <input type ="password" name="pass" id="pass" required/>
+
+        <div><label for="pass">Repetir contraseña</label></div>
+        <input type ="password" name="pass2" id="pass2" required/> 
            
         <div class="submit-row">
             <input type="submit" value="Iniciar Sesion"/>
@@ -34,7 +40,6 @@
     </form>
     <div class="navegacion">
     <a href="../index.php"><input type="button" value="volver"></a>
-    <a href="registrar.php"> <input type="button" value="registrarse"></a>
     </div>
     
 </section>
