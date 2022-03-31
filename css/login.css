@@ -1,7 +1,14 @@
 
 .container {
-    margin: 10px auto;
+    margin: 0px auto;
     display: table;
-    max-width: 800px;
-    width: 100%;
+    max-width: 400px;
+}
+section{
+    height: 200px;
+}
+.navegacion{
+float: left;
+margin-top: 20px;
+margin-left: 10px;
 }

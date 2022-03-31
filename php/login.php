@@ -7,7 +7,6 @@
     <title>Fororium</title>
     
     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/css.css">
     <link rel="stylesheet" href="../css/login.css">
 </head>
@@ -20,25 +19,24 @@
 <div class="container">
  
 <section>
-<form action="php/login.php" class="login-wrapper" method="post">
-        <h1>Login_</h1>
+<form action="php/proceso_login.php" method="post">
+        <h1>Login</h1>
+        
+        <div><label >Usuario</label></div>
+        <input type="email" name="email" placeholder="Email" required/>
 
-        <div class="input-row">
-            <span class="icon"><i class="fa fa-at"></i></span>
-            <input type="email" name="email" placeholder="Email" required/>
-        </div>
-
-        <div class="input-row">
-            <span class="icon"><i class="fa fa-lock"></i></span>
-            <input type="password" name="con" placeholder="Contrase&ntilde;a" required/>
-        </div>
+        <div><label>Contraseña</label></div>
+        <input type="password" name="password" placeholder="password" required/>   
+           
         <div class="submit-row">
             <input type="submit" value="Iniciar Sesion"/>
         </div>
-        
-
     </form>
-
+    <div class="navegacion">
+    <a href="../index.php"><input type="button" value="volver"></a>
+    <a href="registrar.php"> <input type="button" value="registrarse"></a>
+    </div>
+    
 </section>
 </div>
 
