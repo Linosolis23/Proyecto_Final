@@ -1,5 +1,6 @@
 <?php 
 require 'lib/consultas.php';
+session_start();
 ?>
     <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +23,12 @@ require 'lib/consultas.php';
 <div class="container">
  
 <section>
-<form action="php/proceso_registrar.php" method="post">
-        <h1>registrarse</h1>
+<form action="proceso_registrar.php" method="post">
+    <h1>registrarse</h1>
         
+        <div><label for="usuario">Nombre de usuario</label></div>
+        <input type ="text" name="usuario" id="usuario" required/>
+
         <div><label for="email">Email</label></div>
         <input type="email" name="email" id="email" required />
 
@@ -33,9 +37,9 @@ require 'lib/consultas.php';
 
         <div><label for="pass">Repetir contraseña</label></div>
         <input type ="password" name="pass2" id="pass2" required/> 
-           
+          
         <div class="submit-row">
-            <input type="submit" value="Iniciar Sesion"/>
+            <input type="submit" value="Registrarse"/>
         </div>
     </form>
     <div class="navegacion">
