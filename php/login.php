@@ -1,7 +1,15 @@
 <?php 
 require 'lib/consultas.php';
 session_start();
+// error_reporting(0);
+if($_GET["mensaje"]=='0'){
 
+    echo "<div class='alerta' id='alerta'>El usuario no existe</div>";
+    
+    }elseif ($_GET["mensaje"]=='1'){
+        echo "<div class='alerta' id='alerta'>La contraseña es incorrecta</div>";
+    
+    }
 
 
 ?>
@@ -28,14 +36,14 @@ session_start();
 <div class="container">
  
 <section>
-<form action="php/proceso_login.php" method="post">
+<form action="proceso_login.php" method="post">
         <h1>Login</h1>
         
-        <div><label >Usuario</label></div>
-        <input type="email" name="email" placeholder="Email" required/>
+        <div><label>Usuario</label></div>
+        <input type="text" name="usuario" placeholder="usuario" id="usuario" required/>
 
         <div><label>Contraseña</label></div>
-        <input type="password" name="password" placeholder="password" required/>   
+        <input type="password" name="pass" id="pass" placeholder="password" required/>   
            
         <div class="submit-row">
             <input type="submit" value="Iniciar Sesion"/>
@@ -48,6 +56,8 @@ session_start();
     
 </section>
 </div>
-
+<!-- Insercion del javascript -->
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="js/js.js"></script>
 </body>
 </html>

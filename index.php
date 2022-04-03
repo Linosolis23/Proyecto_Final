@@ -1,5 +1,6 @@
 <?php 
 session_start();
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,30 +15,12 @@ session_start();
     <header><h2>Fororium</h2></header>
 
 <?php
-// $_SESSION["nombre"]="pepe";
 
-// if ($_SESSION["nombre"]=="pepe"){
-//     echo '<script>alert("1")</script>';
-
-// }else{
-//     echo '<script>alert("2")</script>';
-
-// }
 
 if($_GET["mensaje"]=='0'){
 
     echo "<div class='alerta' id='alerta'>usuario registrado, ya puedes loguearte</div>";
-    
-    }elseif ($_GET["mensaje"]=='1'){
-        echo "<div>Contraseña y recordar contraseña no coinciden</div>";
-    
-    }elseif ($_GET["mensaje"]=='2'){
-        echo "<div>el usuario o la contraseña no es correcta</div>";
-    
-    }elseif ($_GET["mensaje"]=='3'){
-        echo "<div>el usuario no existe</div>";
-    
-    }
+}
 ?>
 
 <div class="container">
@@ -48,19 +31,50 @@ if($_GET["mensaje"]=='0'){
 <li><a href="#">Categoria</a></li>
 <li><a href="#">Blog</a></li>
 <li><a href="">Contact</a></li>
-<li id="login"><a href="php/registrar.php">Registrar</a></li>
-<li id="login"><a href="php/login.php">Login</a>
+<?php
+if (!$_SESSION["usuario"]=="NULL"){
+    echo "<li id='login'><a href='php/registrar.php'>Registrar</a></li>";
+    echo "<li id='login'><a href='php/login.php'>Login</a></li>";
+}else{
+    var_dump($_SESSION["usuario"]);
 
+
+echo"<div class='dropdown'>
+<button onclick='myFunction()' class='dropbtn'>".$_SESSION["usuario"]."</button>
+<div id='myDropdown' class='dropdown-content'>
+  <a href='php/modificarperfil.php'>Modificar perfil</a>
+  <a href='php/cerrarsesion.php'>Cerrar Sesion</a>
+</div>
+</div>";
+}
+?>
 </ul>
 </nav>
 <section>
-
 
 </section>
 </div>
 <!-- Insercion del javascript -->
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="js/js.js"></script>
+
+<script>
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }  
+</script>
 </body>
 </html>
 

@@ -1,6 +1,25 @@
 <?php 
 require 'lib/consultas.php';
 session_start();
+
+
+if($_GET["mensaje"]=='0'){
+
+    echo "<div class='alerta' id='alerta'>Las contraseñas no coinciden</div>";
+    
+    }elseif ($_GET["mensaje"]=='1'){
+        echo "<div class='alerta' id='alerta'>La contraseña es incorrecta</div>";
+    
+    }elseif ($_GET["mensaje"]=='2'){
+        echo "<div>el usuario o la contraseña no es correcta</div>";
+    
+    }elseif ($_GET["mensaje"]=='3'){
+        echo "<div>el usuario no existe</div>";
+    
+    }
+
+
+?>
 ?>
     <!DOCTYPE html>
 <html lang="en">
