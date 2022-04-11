@@ -36,7 +36,7 @@ if($_GET["mensaje"]=='0'){
 <div class="container">
  
 <section>
-<form method="post" action="proceso_temas.php">
+<form method="post" action="procesos/proceso_temas.php">
 <?php
 echo "<div><label for='Tema'>Tema</label></div>";
 echo "<div><input type ='text' name='tema_nombre' id='tema_nombre' required/></div>";

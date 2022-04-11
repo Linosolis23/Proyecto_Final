@@ -73,28 +73,22 @@ class consultas extends db{
         }
 
         //TEMAS
-        public function insertartema($tema_nombre,$tema_cat){
-          $sql="INSERT INTO temas (tema_nombre,tema_fecha,tema_cat,tema_por) VALUES ('$tema_nombre',NOW(),'$tema_cat','$_SESSION[id]' )";
+        public function insertartema($tema_nombre,$contenido,$tema_cat){
+          $sql="INSERT INTO temas (tema_nombre,contenido,tema_fecha,tema_cat,tema_por) VALUES ('$tema_nombre','$contenido',NOW(),'$tema_cat','$_SESSION[id]' )";
           $this->realizarConsulta($sql);
         }
-        // public function mostrartema($id){
-        //   $sql="SELECT * FROM temas WHERE tema_id='".$id."'";
-        //   $resultado = $this->realizarConsulta($sql);
-        //   if ($resultado != null) {
-        //       $tabla = [];
-        //       while ($fila = $resultado->fetch_assoc()) {
-        //           $tabla[] = $fila;
-        //       }
-        //       return $tabla;
-        //   } else {
-        //       return null;
-        //   }
-        // }
-        //publicaciones
-
-        public function insertarpost($contenido,$tema_id){
-          $sql ="INSERT INTO publicaciones (post_contenido,post_fecha,post_tema,post_por) VALUES ('$contenido',NOW(),'$tema_id','$_SESSION[id]') ";
-          $this->realizarConsulta($sql);
+        public function mostrartemas(){
+          $sql="SELECT * FROM temas ";
+          $resultado = $this->realizarConsulta($sql);
+          if ($resultado != null) {
+              $tabla = [];
+              while ($fila = $resultado->fetch_assoc()) {
+                  $tabla[] = $fila;
+              }
+              return $tabla;
+          } else {
+              return null;
+          }
         }
 
 

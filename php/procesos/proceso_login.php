@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'lib/consultas.php';
+require '../lib/consultas.php';
 $BaseDatos=new consultas();
 $encontrado = false;
 
@@ -23,14 +23,14 @@ if ($encontrado) {
         $_SESSION["email"] = $registro["email"];
         $_SESSION["rol"] = $registro["rol"];
         $_SESSION["avatar"] = $registro["avatar"];
-        header('location: ../index.php');
+        header('location: ../../index.php');
 
 
         echo "0";
 
         //la contraseña es incorrecta
     }else{
-        header('location: login.php?mensaje=1');
+        header('location: ../login.php?mensaje=1');
         echo "1";
 
     }
@@ -38,7 +38,7 @@ if ($encontrado) {
     
     //el usuario no existe
     }else{
-        header('location: login.php?mensaje=0');
+        header('location: ../login.php?mensaje=0');
         echo "2";
 
     }

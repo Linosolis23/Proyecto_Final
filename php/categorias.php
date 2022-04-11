@@ -37,7 +37,7 @@ if($_GET["mensaje"]=='0'){
 <div class="container">
  
 <section>
-<form action="proceso_categorias.php" method="post">
+<form action="procesos/proceso_categorias.php" method="post">
     <h1>Crear Categoria</h1>
         
         <div><label for="nombre_categoria">Nombre de la categoria</label></div>

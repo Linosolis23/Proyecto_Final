@@ -4,6 +4,8 @@ error_reporting(0);
 require 'php/lib/consultas.php';
 $BaseDatos=new consultas();
 $resultado=$BaseDatos->mostrarcategorias();
+$resultado2=$BaseDatos->mostrartemas();
+
 
 ?>
 
@@ -42,7 +44,7 @@ if($_GET["mensaje"]=='0'){
   <nav class="menu">
 <ul>
 <li class="active"><a href="index.php">Home</a></li>
-<li><a href="#">Posts</a></li>
+<li><a href="php/temas.php">Posts</a></li>
 <li><a href="php/categorias.php">Categorias</a></li>
 
 <?php
@@ -80,7 +82,7 @@ echo"<div class='dropdown'>
   <?php
         foreach($resultado as $actividad){
             echo "<tr>";
-            echo '<td><a href="category.php?id">' . $actividad['categoria_nombre'];
+            echo '<td><a href="php/mostrartemas.php?titulo='.$actividad['categoria_nombre'].'">' . $actividad['categoria_nombre'];
                 echo "<td>".$actividad["categoria_desc"]."</td>";
             echo "</tr>";
         }
@@ -94,6 +96,43 @@ echo"<div class='dropdown'>
         </tfoot>
   </table>
 </div>
+
+<div class="tablon">
+  <table id="tabla" class="display table">
+        <thead>
+            <tr>
+            <th> tema id </th>
+
+                <th> Nombre tema </th>
+                <th> contenido del tema </th>
+                <th> tema_fecha </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+  <?php
+        foreach($resultado2 as $actividad){
+            echo "<tr>";
+            echo "<td>".$actividad["tema_id"]."</td>";
+            echo '<td>' . $actividad['tema_nombre'];
+                echo "<td>".$actividad["contenido"]."</td>";
+                echo "<td>".$actividad["tema_fecha"]."</td>";
+
+            echo "</tr>";
+        }
+?>
+        </tbody>
+        <tfoot>
+            <tr>
+            <th> Nombre Categoria </th>
+            <th> Descripcion de la Categoria </th>
+            <th> tema_fecha </th>
+
+            </tr>
+        </tfoot>
+  </table>
+</div>
+
 </section>
 </div>
 <!-- Insercion del javascript -->

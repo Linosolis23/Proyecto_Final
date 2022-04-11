@@ -39,7 +39,7 @@ if($_GET["mensaje"]=='0'){
 <div class="container">
  
 <section>
-<form action="proceso_login.php" method="post">
+<form action="procesos/proceso_login.php" method="post">
         <h1>Login</h1>
         
         <div><label>Usuario</label></div>
