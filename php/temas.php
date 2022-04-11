@@ -1,6 +1,9 @@
 <?php 
-require 'lib/consultas.php';
 session_start();
+error_reporting(0);
+require 'lib/consultas.php';
+$BaseDatos=new consultas();
+$resultado=$BaseDatos->mostrarcategorias();
 
 
 if($_GET["mensaje"]=='0'){
@@ -33,29 +36,24 @@ if($_GET["mensaje"]=='0'){
 <div class="container">
  
 <section>
-<form action="proceso_registrar.php" method="post">
-    <h1>registrarse</h1>
-        
-        <div><label for="usuario">Nombre de usuario</label></div>
-        <input type ="text" name="usuario" id="usuario" required/>
+<form method="post" action="proceso_temas.php">
+<?php
+echo "<div><label for='Tema'>Tema</label></div>";
+echo "<div><input type ='text' name='tema_nombre' id='tema_nombre' required/></div>";
+echo "<label for='categoria'>Categorias </label>";
 
-        <div><label for="email">Email</label></div>
-        <input type="email" name="email" id="email" required />
+echo '<select name="tema_cat">';
+foreach($resultado as $actividad){
 
-        <div><label for="pass">Contraseña</label></div>
-        <input type ="password" name="pass" id="pass" required/>
+    echo '<option value="' . $actividad['categoria_id'] . '">' . $actividad['categoria_nombre'] . '</option>';
+}
+echo '</select>'; 
 
-        <div><label for="pass">Repetir contraseña</label></div>
-        <input type ="password" name="pass2" id="pass2" required/> 
-          
-        <div class="submit-row">
-            <input type="submit" value="Registrarse"/>
-        </div>
-        <div class="navegacion">
-    <a href="../index.php"><input type="button" value="volver"></a>
-    </div>
-    </form>
-    
+echo "<div><label for='Mensaje'>Mensaje</label></div>";
+echo '<div><textarea  maxlength="255" class="mensaje_textarea" name="contenido" /></textarea><div>
+<input type="submit" value="Crear tema" />
+</form>';
+?>    
     
 </section>
 </div>

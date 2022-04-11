@@ -9,6 +9,9 @@ if($_GET["mensaje"]=='0'){
     }elseif ($_GET["mensaje"]=='1'){
         echo "<div class='alerta' id='alerta'>La contraseña es incorrecta</div>";
     
+    }elseif ($_GET["mensaje"]=='2'){
+        echo "<div class='alerta' id='alerta'>Debes logearte para poder acceder</div>";
+    
     }
 
 
@@ -58,6 +61,6 @@ if($_GET["mensaje"]=='0'){
 </div>
 <!-- Insercion del javascript -->
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-<script src="js/js.js"></script>
+<script src="../js/js.js"></script>
 </body>
 </html>

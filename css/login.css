@@ -1,5 +1,5 @@
 section{
-height: 250px;
+height: 270px;
 width: 300px;
 }
 .container {
@@ -10,4 +10,8 @@ width: 300px;
 .navegacion{
     float: left;
     margin-top: 30px;
+}
+.mensaje_textarea{
+    height: 150px;
+    width:  250px;
 }

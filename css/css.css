@@ -92,6 +92,9 @@ background-color: coral;
     position: absolute;
     background-color: coral;
     min-width: 120px;
+    margin-left:75px ;
+    margin-top: -45px;
+    border: 5px solid orangered;
   }
   
   .dropdown-content a {
@@ -103,4 +106,42 @@ background-color: coral;
   
   .dropdown a:hover {background-color: #444;}
   
-  .show {display: block;}
+  .show {
+      display: block;
+}
+
+
+/*DATATABLE*/
+/*Para que se vean los campos de la tabla con el fondo*/
+a,th, td{
+    color: white;
+    text-decoration:none;
+
+}
+a,td{
+    color: rgb(254, 113, 62);
+}
+
+/* Reglas de estilo para los datatables */
+option{
+    background-color: rgb(248, 187, 165);
+}
+.tablon label,
+.tablon select,
+.tablon #tabla_info,
+.tablon input[type=search] {
+    color: black;
+    background-color: coral;
+    
+
+}
+
+.tablon td {
+    background-color: #444;
+}
+.tablon .sorting_1,
+.tablon thead,
+.tablon tfoot {
+    background-color: black !important;
+
+}
