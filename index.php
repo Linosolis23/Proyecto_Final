@@ -53,8 +53,6 @@ if (!$_SESSION["usuario"]=="NULL"){
     echo "<li id='login'><a href='php/registrar.php'>Registrar</a></li>";
     echo "<li id='login'><a href='php/login.php'>Login</a></li>";
 }else{
-    var_dump($_SESSION["usuario"]);
-
 
 echo"<div class='dropdown'>
 <button onclick='myFunction()' class='dropbtn'>".$_SESSION["usuario"]."</button>
@@ -83,7 +81,10 @@ echo"<div class='dropdown'>
         foreach($resultado as $actividad){
             echo "<tr>";
             echo '<td><a href="php/mostrartemas.php?titulo='.$actividad['categoria_nombre'].'">' . $actividad['categoria_nombre'];
-                echo "<td>".$actividad["categoria_desc"]."</td>";
+              echo "<td>".$actividad["categoria_desc"]."</td>";
+              if ($_SESSION AND $_SESSION["rol"] == 0) {
+                echo "<td><a href='deletecategoria.php?id=".$actividad["categoria_id"]."'><input type='button' class='btn btn-danger' value='Eliminar'></a></td>";
+            }
             echo "</tr>";
         }
 ?>
@@ -117,9 +118,11 @@ echo"<div class='dropdown'>
             echo '<td>' . $actividad['tema_nombre'];
                 echo "<td>".$actividad["contenido"]."</td>";
                 echo "<td>".$actividad["tema_fecha"]."</td>";
-
+          
             echo "</tr>";
         }
+        var_dump($_SESSION);
+
 ?>
         </tbody>
         <tfoot>
