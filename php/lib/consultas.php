@@ -10,8 +10,8 @@ class consultas extends db{
           $sql="INSERT INTO usuarios (nombre_usuario, email, pass, rol ,avatar) VALUES ('$usuario','$email','$pass','1','../../cosas_necesarias/avatar.png')";
           $this->realizarConsulta($sql);
         }
-        public function modificarPerfil($usuario,$email,$pass,$id) {
-          $sql = "UPDATE usuarios SET nombre_usuario = '".$usuario."', email = '".$email."', pass = '".$pass."'WHERE id = ".$id;
+        public function modificarPerfil($usuario,$email,$pass,$id_usuario) {
+          $sql = "UPDATE usuarios SET nombre_usuario = '".$usuario."', email = '".$email."', pass = '".$pass."'WHERE id_usuario = ".$id_usuario;
           $this->realizarConsulta($sql);
         }
         public function comprobarusuario($usuario){
@@ -90,8 +90,32 @@ class consultas extends db{
               return null;
           }
         }
-
-
+        public function comprobartemas($categoria_id){
+          $sql="SELECT * FROM temas WHERE tema_cat='".$categoria_id."'";
+          $resultado = $this->realizarConsulta($sql);
+          if ($resultado!=null){
+              $tabla=[];
+              while($fila=$resultado->fetch_assoc()){
+                  $tabla[]=$fila;
+              }
+            return $tabla;
+          } else {
+            return null;
+          }
+        }
+        public function mostrartemaid($id){
+          $sql="SELECT * FROM temas WHERE tema_id='".$id."'";
+          $resultado = $this->realizarConsulta($sql);
+          if ($resultado!=null){
+              $tabla=[];
+              while($fila=$resultado->fetch_assoc()){
+                  $tabla[]=$fila;
+              }
+            return $tabla;
+          } else {
+            return null;
+          }
+        }
 
 
 

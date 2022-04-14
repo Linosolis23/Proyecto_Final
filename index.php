@@ -67,6 +67,8 @@ echo"<div class='dropdown'>
 </nav>
 <section>
 <!-- <br><br><br><br><br><br> -->
+
+<h1 style="color: #444;"><strong> Todas las Categorias</strong></h1>
 <div class="tablon">
   <table id="tabla" class="display table">
         <thead>
@@ -102,8 +104,6 @@ echo"<div class='dropdown'>
   <table id="tabla" class="display table">
         <thead>
             <tr>
-            <th> tema id </th>
-
                 <th> Nombre tema </th>
                 <th> contenido del tema </th>
                 <th> tema_fecha </th>
@@ -114,14 +114,12 @@ echo"<div class='dropdown'>
   <?php
         foreach($resultado2 as $actividad){
             echo "<tr>";
-            echo "<td>".$actividad["tema_id"]."</td>";
             echo '<td>' . $actividad['tema_nombre'];
                 echo "<td>".$actividad["contenido"]."</td>";
                 echo "<td>".$actividad["tema_fecha"]."</td>";
           
             echo "</tr>";
         }
-        var_dump($_SESSION);
 
 ?>
         </tbody>
@@ -135,6 +133,7 @@ echo"<div class='dropdown'>
         </tfoot>
   </table>
 </div>
+<?php var_dump($_SESSION)?>
 
 </section>
 </div>
