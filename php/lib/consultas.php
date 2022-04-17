@@ -117,7 +117,22 @@ class consultas extends db{
           }
         }
 
-
-
+public function crearrespuesta($respuesta,$id){
+  $sql="INSERT INTO respuestas (respuesta_contenido,respuesta_fecha,tema_id,respuesta_por) VALUES ('$respuesta',NOW(),$id,'$_SESSION[id]')";
+  $this->realizarConsulta($sql);
+}
+public function mosrtrarrespuesta($id){
+  $sql="SELECT * FROM respuestas WHERE tema_id='".$id."'";
+  $resultado = $this->realizarConsulta($sql);
+  if ($resultado!=null){
+      $tabla=[];
+      while($fila=$resultado->fetch_assoc()){
+          $tabla[]=$fila;
+      }
+    return $tabla;
+  } else {
+    return null;
   }
+}
+}
 ?>

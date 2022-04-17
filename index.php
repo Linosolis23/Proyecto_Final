@@ -75,6 +75,10 @@ echo"<div class='dropdown'>
             <tr>
                 <th> Nombre Categoria </th>
                 <th> Descripcion de la Categoria </th>
+              <?php if ($_SESSION AND $_SESSION["rol"] == 0) {
+                
+                echo "<th> Eliminar </th>";
+            }?>
                 
             </tr>
         </thead>
@@ -85,6 +89,7 @@ echo"<div class='dropdown'>
             echo '<td><a href="php/mostrartemas.php?titulo='.$actividad['categoria_nombre'].'">' . $actividad['categoria_nombre'];
               echo "<td>".$actividad["categoria_desc"]."</td>";
               if ($_SESSION AND $_SESSION["rol"] == 0) {
+                
                 echo "<td><a href='deletecategoria.php?id=".$actividad["categoria_id"]."'><input type='button' class='btn btn-danger' value='Eliminar'></a></td>";
             }
             echo "</tr>";
@@ -95,10 +100,17 @@ echo"<div class='dropdown'>
             <tr>
             <th> Nombre Categoria </th>
             <th> Descripcion de la Categoria </th>
+            <?php if ($_SESSION AND $_SESSION["rol"] == 0) {
+                
+                echo "<th> Eliminar </th>";
+            }?>
             </tr>
         </tfoot>
   </table>
 </div>
+
+<h1 style="color: #444;"><strong> Todos los posts</strong></h1>
+
 
 <div class="tablon">
   <table id="tabla" class="display table">
@@ -107,7 +119,10 @@ echo"<div class='dropdown'>
                 <th> Nombre tema </th>
                 <th> contenido del tema </th>
                 <th> tema_fecha </th>
+                <?php if ($_SESSION AND $_SESSION["rol"] == 0) {
                 
+                echo "<th> Eliminar </th>";
+            }?>
             </tr>
         </thead>
         <tbody>
@@ -117,6 +132,11 @@ echo"<div class='dropdown'>
             echo '<td>' . $actividad['tema_nombre'];
                 echo "<td>".$actividad["contenido"]."</td>";
                 echo "<td>".$actividad["tema_fecha"]."</td>";
+                if ($_SESSION AND $_SESSION["rol"] == 0) {
+                
+                  echo "<td><a href='deletetema.php?id=".$actividad["tema_id"]."'><input type='button' class='btn btn-danger' value='Eliminar'></a></td>";
+              }
+              echo "</tr>";
           
             echo "</tr>";
         }
@@ -128,7 +148,10 @@ echo"<div class='dropdown'>
             <th> Nombre Categoria </th>
             <th> Descripcion de la Categoria </th>
             <th> tema_fecha </th>
-
+            <?php if ($_SESSION AND $_SESSION["rol"] == 0) {
+                
+                echo "<th> Eliminar </th>";
+            }?>
             </tr>
         </tfoot>
   </table>
