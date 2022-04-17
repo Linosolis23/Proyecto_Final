@@ -45,8 +45,8 @@ class consultas extends db{
           $sql="INSERT INTO categorias (categoria_nombre,categoria_desc,tema_fecha) VALUES ('$cat_nombre','$cat_descripcion',NOW())" ;
           $this->realizarConsulta($sql);
         }
-        public function comprobarcategoria($cat_nombre){
-          $sql="SELECT * FROM categorias WHERE categoria_nombre='".$cat_nombre."'";
+        public function comprobarcategoria($cat_nombre,$cat_id){
+          $sql="SELECT * FROM categorias WHERE categoria_nombre='".$cat_nombre."' OR categoria_id='".$cat_id."'" ;
           $resultado = $this->realizarConsulta($sql);
           if ($resultado!=null){
               $tabla=[];

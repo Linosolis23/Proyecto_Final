@@ -129,18 +129,14 @@ echo"<div class='dropdown'>
   <?php
         foreach($resultado2 as $actividad){
             echo "<tr>";
-            echo '<td>' . $actividad['tema_nombre'];
-                echo "<td>".$actividad["contenido"]."</td>";
-                echo "<td>".$actividad["tema_fecha"]."</td>";
-                if ($_SESSION AND $_SESSION["rol"] == 0) {
-                
-                  echo "<td><a href='deletetema.php?id=".$actividad["tema_id"]."'><input type='button' class='btn btn-danger' value='Eliminar'></a></td>";
-              }
-              echo "</tr>";
-          
+            echo '<td><a href="php/mostrarposts.php?id='.$actividad['tema_id'].'">' . $actividad['tema_nombre'];
+            echo "<td>".$actividad["contenido"]."</td>";
+            echo "<td>".$actividad["tema_fecha"]."</td>";
+            if ($_SESSION AND $_SESSION["rol"] == 0) {
+              echo "<td><a href='deletetema.php?id=".$actividad["tema_id"]."'><input type='button' class='btn btn-danger' value='Eliminar'></a></td>";
+            }
             echo "</tr>";
         }
-
 ?>
         </tbody>
         <tfoot>

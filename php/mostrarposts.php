@@ -8,11 +8,13 @@ $resultado=$BaseDatos->mostrartemaid($id);
 
 // var_dump($_SESSION);
 
+
 var_dump($id);
 foreach($resultado as $actividad){
 echo "<h1>".$actividad['tema_nombre']."</h1>";
 echo "<textarea name='comentario'readonly rows='10' cols='40'>".$actividad['contenido']."</textarea>";
 echo "<h2>Creado el: <sub>".$actividad["tema_fecha"]."<sub></h2>";
+echo '<div><a href="mostrartemas.php?id='.$actividad['tema_cat'].'"><input type="button" value="volver"></a></div>';
 }
 echo " <h2>Responder</h2>";
 echo '  
@@ -20,7 +22,7 @@ echo '
     <textarea name="respuesta" rows="10" cols="40"></textarea>
     <div><input type="submit" value="Responder" />
 </form>';
-echo '<div><a href="mostrartemas.php?titulo="><input type="button" value="volver"></a></div>';
+
 
 echo "<hr>";
 echo " <h1>Todas las respuestas:</h1>";

@@ -32,7 +32,7 @@ if($_GET["mensaje"]=='0'){
 
 <div class="container">
  
-<section>
+<section class="registrar">
 <form action="procesos/proceso_registrar.php" method="post">
     <h1>registrarse</h1>
         
@@ -49,11 +49,9 @@ if($_GET["mensaje"]=='0'){
         <input type ="password" name="pass2" id="pass2" required/> 
           
         <div class="submit-row">
-            <input type="submit" value="Registrarse"/>
+            <input type="submit" value="Registrarse" class="registrarse_registrar"/>
         </div>
-        <div class="navegacion">
-    <a href="../index.php"><input type="button" value="volver"></a>
-    </div>
+    <a href="../index.php"><input type="button" value="volver" class="volver_registrar"></a>
     </form>
     
     

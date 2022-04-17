@@ -28,7 +28,7 @@ if($_GET["mensaje"]=='0'){
     
     <!-- CSS only -->
 <link rel="stylesheet" href="../css/css.css">
-    <link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
@@ -49,10 +49,10 @@ if($_GET["mensaje"]=='0'){
         <input type="password" name="pass" id="pass" placeholder="password" required/>   
            
         <div class="submit-row">
-            <input type="submit" value="Iniciar Sesion"/>
+            <input type="submit" value="Iniciar Sesion"class="iniciarsesion_login"/>
         </div>
     </form>
-    <div class="navegacion">
+    <div class="href_login">
     <a href="../index.php"><input type="button" value="volver"></a>
     <a href="registrar.php"> <input type="button" value="registrarse"></a>
     </div>
