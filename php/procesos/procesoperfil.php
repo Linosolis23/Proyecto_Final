@@ -20,13 +20,6 @@ echo "1";
 }
 
 
-    
-//     $_SESSION["usuario"] = $_POST["usuario"];
-//     $_SESSION["Apellidos"] = $_POST["Apellidos"];
-//     $_SESSION["email"] = $_POST["email"];
-//     $_SESSION["rol"] = $_POST["rol"];
-    // header('location:modificarperfil.php');
-
 
 
 ?>

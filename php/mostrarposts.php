@@ -6,10 +6,8 @@ $id=$_GET["id"];
 $prueba=$id;
 $resultado=$BaseDatos->mostrartemaid($id);
 
-// var_dump($_SESSION);
 
 
-var_dump($id);
 foreach($resultado as $actividad){
 echo "<h1>".$actividad['tema_nombre']."</h1>";
 echo "<textarea name='comentario'readonly rows='10' cols='40'>".$actividad['contenido']."</textarea>";

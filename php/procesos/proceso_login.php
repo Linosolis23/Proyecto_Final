@@ -15,7 +15,7 @@ foreach($resultado as $registro){
 }
 //si el usuario existe entramos en el if si no le decimos que no existe
 if ($encontrado) {
-    if ($_POST["pass"] == $registro["pass"]) {
+    if (sha1($_POST["pass"]) == $registro["pass"]) {
         
         $_SESSION["id"] = $registro["id_usuario"];
         $_SESSION["usuario"] = $registro["nombre_usuario"];

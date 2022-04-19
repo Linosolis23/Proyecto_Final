@@ -42,8 +42,21 @@ class consultas extends db{
         }
         //CATEGORIAS
         public function categorias($cat_nombre,$cat_descripcion){
-          $sql="INSERT INTO categorias (categoria_nombre,categoria_desc,tema_fecha) VALUES ('$cat_nombre','$cat_descripcion',NOW())" ;
+          $sql="INSERT INTO categorias (categoria_nombre,categoria_desc) VALUES ('$cat_nombre','$cat_descripcion')" ;
           $this->realizarConsulta($sql);
+        }
+        public function comprobarcategoria2($cat_nombre){
+          $sql="SELECT * FROM categorias WHERE categoria_nombre='".$cat_nombre."'" ;
+          $resultado = $this->realizarConsulta($sql);
+          if ($resultado!=null){
+              $tabla=[];
+              while($fila=$resultado->fetch_assoc()){
+                  $tabla[]=$fila;
+              }
+            return $tabla;
+          } else {
+            return null;
+          }
         }
         public function comprobarcategoria($cat_nombre,$cat_id){
           $sql="SELECT * FROM categorias WHERE categoria_nombre='".$cat_nombre."' OR categoria_id='".$cat_id."'" ;

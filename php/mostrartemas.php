@@ -1,12 +1,12 @@
 <?php
 session_start();
 require 'lib/consultas.php';
+error_reporting(0);
 $BaseDatos=new consultas();
 $cat_nombre=$_GET["titulo"];
 $cat_id=$_GET["id"];
-
 $resultado=$BaseDatos->comprobarcategoria($cat_nombre,$cat_id);
-var_dump($resultado);
+// var_dump($resultado);
 
  foreach($resultado as $actividad){
    $categoria_id=$actividad['categoria_id'];  
