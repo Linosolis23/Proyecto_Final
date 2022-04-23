@@ -66,7 +66,6 @@ echo"<div class='dropdown'>
 </ul>
 </nav>
 <section>
-<!-- <br><br><br><br><br><br> -->
 
 <h1 style="color: #444;"><strong> Todas las Categorias</strong></h1>
 <div class="tablon">
@@ -141,9 +140,9 @@ echo"<div class='dropdown'>
         </tbody>
         <tfoot>
             <tr>
-            <th> Nombre Categoria </th>
-            <th> Descripcion de la Categoria </th>
-            <th> tema_fecha </th>
+            <th> Nombre tema </th>
+                <th> contenido del tema </th>
+                <th> tema_fecha </th>
             <?php if ($_SESSION AND $_SESSION["rol"] == 0) {
                 
                 echo "<th> Eliminar </th>";
@@ -152,7 +151,6 @@ echo"<div class='dropdown'>
         </tfoot>
   </table>
 </div>
-<?php var_dump($_SESSION)?>
 
 </section>
 </div>

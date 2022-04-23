@@ -5,7 +5,10 @@ require 'lib/consultas.php';
 $BaseDatos=new consultas();
 $resultado=$BaseDatos->mostrarcategorias();
 
-
+if (!$_SESSION["usuario"]=="NULL"){
+    header('location: login.php?mensaje=2');
+}else{
+}
 if($_GET["mensaje"]=='0'){
 
     echo "<div class='alerta' id='alerta'>Las contraseñas no coinciden</div>";

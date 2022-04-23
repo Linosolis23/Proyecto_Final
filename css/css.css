@@ -133,7 +133,6 @@ option{
     color: black;
     background-color: coral;
     
-
 }
 
 .tablon td {
@@ -142,6 +141,35 @@ option{
 .tablon .sorting_1,
 .tablon thead,
 .tablon tfoot {
-    background-color: black !important;
+background-color: black !important;
 
+}
+/*Regla de estilos de los mostrar*/
+
+.tema_nombre{
+    margin-bottom:30px;
+    position: relative;
+    top: 10px;
+}
+.lineamostrar{
+height:10px!important;
+color:black;
+opacity:100;
+}
+.amostrar{
+    color:black;
+    text-decoration-line: underline;
+
+}
+.separadormostrartemas{
+margin-top:30px;    
+}
+.botoninferiormostrartemas{
+    margin-top:50px;
+}
+.tema_nombre_mostrarnombre{
+ margin-bottom:50px;
+    position: relative;
+    top: 20px;
+    
 }
