@@ -72,6 +72,19 @@ class consultas extends db{
           }
         }
         public function mostrarcategorias(){
+          $sql="SELECT * FROM categorias ORDER BY categoria_id DESC LIMIT 5";
+          $resultado = $this->realizarConsulta($sql);
+          if ($resultado != null) {
+              $tabla = [];
+              while ($fila = $resultado->fetch_assoc()) {
+                  $tabla[] = $fila;
+              }
+              return $tabla;
+          } else {
+              return null;
+          }
+        }
+        public function mostrartodaslascategorias(){
           $sql="SELECT * FROM categorias";
           $resultado = $this->realizarConsulta($sql);
           if ($resultado != null) {
@@ -85,13 +98,32 @@ class consultas extends db{
           }
         }
 
+        public function deletecategoria($cat_id) {
+          $sql= "DELETE FROM categorias WHERE categoria_id=".$cat_id;
+          $this->realizarConsulta($sql);
+      }
+
+
         //TEMAS
         public function insertartema($tema_nombre,$contenido,$tema_cat){
           $sql="INSERT INTO temas (tema_nombre,contenido,tema_fecha,tema_cat,tema_por) VALUES ('$tema_nombre','$contenido',NOW(),'$tema_cat','$_SESSION[id]' )";
           $this->realizarConsulta($sql);
         }
         public function mostrartemas(){
-          $sql="SELECT * FROM temas ";
+          $sql="SELECT * FROM temas ORDER BY tema_fecha DESC LIMIT 5";
+          $resultado = $this->realizarConsulta($sql);
+          if ($resultado != null) {
+              $tabla = [];
+              while ($fila = $resultado->fetch_assoc()) {
+                  $tabla[] = $fila;
+              }
+              return $tabla;
+          } else {
+              return null;
+          }
+        }
+        public function mostrartodoslostemas(){
+          $sql="SELECT * FROM temas ORDER BY tema_fecha DESC";
           $resultado = $this->realizarConsulta($sql);
           if ($resultado != null) {
               $tabla = [];
@@ -147,5 +179,12 @@ public function mosrtrarrespuesta($id){
     return null;
   }
 }
+public function deletetema($tema_id) {
+  $sql= "DELETE FROM temas WHERE tema_id=".$tema_id;
+  $this->realizarConsulta($sql);
+}
+
+
+
 }
 ?>

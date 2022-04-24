@@ -1,5 +1,6 @@
 <?php 
 session_start();
+error_reporting(0);
 require 'lib/consultas.php';
 $BaseDatos=new consultas();
 $id=$_GET["id"];
@@ -23,7 +24,11 @@ $resultado=$BaseDatos->mostrartemaid($id);
   <link rel="stylesheet" href="../css/local.css">
 
 </head>
-
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.dataTables.js"></script>
+<script src="../js/tablasJquery.js"></script>
+<script src="../js/js.js"></script>
+<script src="../js/mensaje.js"></script>
 <body>
   <header>
     <h2>Fororium</h2>
@@ -31,9 +36,28 @@ $resultado=$BaseDatos->mostrartemaid($id);
   <div class="container">
     <nav class="menu">
       <ul>
-        <li class="active"><a href="../../index.php">Home</a></li>
-        <li><a href="temas.php">Posts</a></li>
-        <li><a href="categorias.php">Categorias</a></li>
+<li><a href="../index.php">Home</a></li>
+<li><a href="temas.php">Crear Posts</a></li>
+<li><a href="categorias.php">Crear Categorias</a></li>
+<li><a href="todoslostemas.php">Todos los temas</a></li>
+<li><a href="todaslascategorias.php">Todas las Categorias</a></li>
+
+<?php
+if (!$_SESSION["usuario"]=="NULL"){
+
+    echo "<li id='login'><a href='registrar.php'>Registrar</a></li>";
+    echo "<li id='login'><a href='login.php'>Login</a></li>";
+}else{
+
+echo"<div class='dropdown'>
+<button onclick='myFunction()' class='dropbtn'>".$_SESSION["usuario"]."</button>
+<div id='myDropdown' class='dropdown-content'>
+  <a href='modificarperfil.php'>Modificar perfil</a>
+  <a href='cerrarsesion.php'>Cerrar Sesion</a>
+</div>
+</div>";
+}
+?>
 </nav>
 <section>
 
@@ -47,12 +71,19 @@ echo "<h2>Creado el: <sub>".$actividad["tema_fecha"]."<sub></h2>";
 echo " <h2 class='tema_nombre' >Responder</h2>";
 echo '  
 <form method="post" action="procesos/respuestas.php?id='.$_GET["id"].'">
-    <textarea name="respuesta" rows="10" cols="40"></textarea>
-    <div><input type="submit" value="Responder" />
-</form>';
+    <textarea name="respuesta" rows="10" cols="40" required></textarea>';
+    
+    if (!$_SESSION["usuario"]=="NULL"){
+      echo "<div><strong>Debes loguearte para escribir una respuesta</strong</div>";
+      echo'<div><input type="submit" value="Responder" disabled/>';
+
+  }else{
+    echo'<div><input type="submit" value="Responder" />';
+  
+  }
+
+echo'</form>';
 echo '<div><a href="mostrartemas.php?id='.$actividad['tema_cat'].'"><input type="button" value="volver"></a></div>';
-
-
 echo "<hr class='lineamostrar'>";
 echo " <h1>Todas las respuestas:</h1>";
 $resultado2=$BaseDatos->mosrtrarrespuesta($id);

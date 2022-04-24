@@ -43,8 +43,8 @@ if($_GET["mensaje"]=='0'){
         <div><label for="nombre_categoria">Nombre de la categoria</label></div>
         <input type ="text" name="nombre_categoria" id="nombre_categoria" required/>
 
-        <div><label for="descripcion_categoria">descripción la categoria</label></div>
-        <textarea name="descripcion_categoria"></textarea>
+        <div><label for="descripcion_categoria" >descripción la categoria</label></div>
+        <textarea name="descripcion_categoria" placeholder="Descripción simple de la categoria" required></textarea>
           
         <div class="submit-row">
             <input type="submit" value="Crear Categoria"/>

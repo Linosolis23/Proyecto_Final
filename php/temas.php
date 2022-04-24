@@ -42,7 +42,7 @@ if($_GET["mensaje"]=='0'){
 <form method="post" action="procesos/proceso_temas.php">
 <?php
 echo "<div><label for='Tema'>Tema</label></div>";
-echo "<div><input type ='text' name='tema_nombre' id='tema_nombre' required/></div>";
+echo "<div><input type ='text' name='tema_nombre' id='tema_nombre'placeholder='titulo de tu tema' required/></div>";
 echo "<label for='categoria'>Categorias </label>";
 
 echo '<select name="tema_cat">';
@@ -53,11 +53,13 @@ foreach($resultado as $actividad){
 echo '</select>'; 
 
 echo "<div><label for='Mensaje'>Mensaje</label></div>";
-echo '<div><textarea  maxlength="255" class="mensaje_textarea" name="contenido" /></textarea><div>
+echo '<div><textarea  maxlength="255" class="mensaje_textarea" placeholder="Contenido de tu mensaje" required name="contenido" /></textarea><div>
 <input type="submit" value="Crear tema" />
 </form>';
-?>    
-    
+?>
+<div>   
+<a href="../index.php"><input type="button" value="volver"></a>
+</div>
 </section>
 </div>
 <!-- Insercion del javascript -->

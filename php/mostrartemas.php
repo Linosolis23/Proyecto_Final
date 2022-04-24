@@ -22,7 +22,11 @@ $resultado = $BaseDatos->comprobarcategoria($cat_nombre, $cat_id);
   <link rel="stylesheet" href="../css/local.css">
 
 </head>
-
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.dataTables.js"></script>
+<script src="../js/tablasJquery.js"></script>
+<script src="../js/js.js"></script>
+<script src="../js/mensaje.js"></script>
 <body>
   <header>
     <h2>Fororium</h2>
@@ -30,9 +34,28 @@ $resultado = $BaseDatos->comprobarcategoria($cat_nombre, $cat_id);
   <div class="container">
     <nav class="menu">
       <ul>
-        <li class="active" > <a href="../../index.php">Home</a></li>
-        <li><a href="temas.php">Posts</a></li>
-        <li><a href="categorias.php">Categorias</a></li>
+      <li><a href="../index.php">Home</a></li>
+<li><a href="temas.php">Crear Posts</a></li>
+<li><a href="categorias.php">Crear Categorias</a></li>
+<li><a href="todoslostemas.php">Todos los temas</a></li>
+<li><a href="todaslascategorias.php">Todas las Categorias</a></li>
+
+<?php
+if (!$_SESSION["usuario"]=="NULL"){
+
+    echo "<li id='login'><a href='registrar.php'>Registrar</a></li>";
+    echo "<li id='login'><a href='login.php'>Login</a></li>";
+}else{
+
+echo"<div class='dropdown'>
+<button onclick='myFunction()' class='dropbtn'>".$_SESSION["usuario"]."</button>
+<div id='myDropdown' class='dropdown-content'>
+  <a href='modificarperfil.php'>Modificar perfil</a>
+  <a href='cerrarsesion.php'>Cerrar Sesion</a>
+</div>
+</div>";
+}
+?>
 </nav>
 <section>
 

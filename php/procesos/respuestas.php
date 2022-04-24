@@ -11,7 +11,4 @@
     $BaseDatos->crearrespuesta($_POST["respuesta"],$id);
     header('location: ../mostrarposts.php?id='.$id);
 }
-
-
-
 ?>

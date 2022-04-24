@@ -18,7 +18,6 @@ $resultado2=$BaseDatos->mostrartemas();
     <title>Fororium</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/css.css">
-   
     <link rel="stylesheet" href="css/jquery.dataTables.css">
     <link rel="stylesheet" href="css/local.css">
 
@@ -44,8 +43,10 @@ if($_GET["mensaje"]=='0'){
   <nav class="menu">
 <ul>
 <li class="active"><a href="index.php">Home</a></li>
-<li><a href="php/temas.php">Posts</a></li>
-<li><a href="php/categorias.php">Categorias</a></li>
+<li><a href="php/temas.php">Crear Posts</a></li>
+<li><a href="php/categorias.php">Crear Categorias</a></li>
+<li><a href="php/todoslostemas.php">Todos los temas</a></li>
+<li><a href="php/todaslascategorias.php">Todas las Categorias</a></li>
 
 <?php
 if (!$_SESSION["usuario"]=="NULL"){
@@ -67,7 +68,7 @@ echo"<div class='dropdown'>
 </nav>
 <section>
 
-<h1 style="color: #444;"><strong> Todas las Categorias</strong></h1>
+<h1 style="color: #444;"><strong> Categorias recientes</strong></h1>
 <div class="tablon">
   <table id="tabla" class="display table">
         <thead>
@@ -89,7 +90,7 @@ echo"<div class='dropdown'>
               echo "<td>".$actividad["categoria_desc"]."</td>";
               if ($_SESSION AND $_SESSION["rol"] == 0) {
                 
-                echo "<td><a href='deletecategoria.php?id=".$actividad["categoria_id"]."'><input type='button' class='btn btn-danger' value='Eliminar'></a></td>";
+                echo "<td><a href='php/procesos/deletecategoria.php?id=".$actividad["categoria_id"]."'><input type='button' class='btn btn-danger' value='Eliminar'></a></td>";
             }
             echo "</tr>";
         }
@@ -108,7 +109,7 @@ echo"<div class='dropdown'>
   </table>
 </div>
 
-<h1 style="color: #444;"><strong> Todos los posts</strong></h1>
+<h1 style="color: #444;"><strong> Temas Recientes</strong></h1>
 
 
 <div class="tablon">
@@ -132,7 +133,7 @@ echo"<div class='dropdown'>
             echo "<td>".$actividad["contenido"]."</td>";
             echo "<td>".$actividad["tema_fecha"]."</td>";
             if ($_SESSION AND $_SESSION["rol"] == 0) {
-              echo "<td><a href='deletetema.php?id=".$actividad["tema_id"]."'><input type='button' class='btn btn-danger' value='Eliminar'></a></td>";
+              echo "<td><a href='php/procesos/deletetema.php?id=".$actividad["tema_id"]."'><input type='button' class='btn btn-danger' value='Eliminar'></a></td>";
             }
             echo "</tr>";
         }
@@ -156,28 +157,9 @@ echo"<div class='dropdown'>
 </div>
 <!-- Insercion del javascript -->
 <script src="js/jquery.js"></script>
-<script src="js/jquery.dataTables.js"></script>
 <script src="js/tablasJquery.js"></script>
 <script src="js/js.js"></script>
-
-
-<script>
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }  
-</script>
+<script src="js/mensaje.js"></script>
 </body>
 </html>
 

@@ -3,12 +3,10 @@ session_start();
 require '../lib/consultas.php';
 $BaseDatos=new consultas();
 
-// var_dump($_POST);
 echo "<br>";
-// var_dump($_SESSION);
 
 if ($_POST["usuario"] == $_SESSION["usuario"] AND $_POST["email"] == $_SESSION["email"]){
-echo "1";
+    header('location: ../..index.php');
 }else{
     $id_usuario=$_SESSION["id"];$pass=$_SESSION["pass"];$usuario=$_SESSION["usuario"];$email=$_SESSION["email"];$avatar =$_SESSION["avatar"];
     $usuario = $_POST["usuario"];
