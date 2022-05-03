@@ -26,20 +26,16 @@ if ($encontrado) {
         header('location: ../../index.php');
 
 
-        echo "0";
 
         //la contraseña es incorrecta
     }else{
         header('location: ../login.php?mensaje=1');
-        echo "1";
 
     }
-    
-    
+      
     //el usuario no existe
     }else{
         header('location: ../login.php?mensaje=0');
-        echo "2";
 
     }
     

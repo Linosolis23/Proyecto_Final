@@ -2,7 +2,6 @@
 require 'lib/consultas.php';
 session_start();
 
-
 if($_GET["mensaje"]=='0'){
 
     echo "<div class='alerta' id='alerta'>Las contraseñas no coinciden</div>";
@@ -53,7 +52,6 @@ if($_GET["mensaje"]=='0'){
         </div>
     <a href="../index.php"><input type="button" value="volver" class="volver_registrar"></a>
     </form>
-    
     
 </section>
 </div>

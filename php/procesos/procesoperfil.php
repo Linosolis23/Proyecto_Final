@@ -6,7 +6,7 @@ $BaseDatos=new consultas();
 echo "<br>";
 
 if ($_POST["usuario"] == $_SESSION["usuario"] AND $_POST["email"] == $_SESSION["email"]){
-    header('location: ../..index.php');
+    header('location: ../modificarperfil.php');
 }else{
     $id_usuario=$_SESSION["id"];$pass=$_SESSION["pass"];$usuario=$_SESSION["usuario"];$email=$_SESSION["email"];$avatar =$_SESSION["avatar"];
     $usuario = $_POST["usuario"];
