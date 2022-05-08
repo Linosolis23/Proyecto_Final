@@ -1,6 +1,12 @@
 <?php
+
 session_start();
+error_reporting(0);
 require 'lib/consultas.php';
+if (!$_SESSION["usuario"]=="NULL"){
+    header('location: login.php?mensaje=2');
+}else{
+}
 $BaseDatos=new consultas();
 var_dump($_SESSION);
 $id_usuario=$_SESSION["id"];$pass=$_SESSION["pass"];$usuario=$_SESSION["usuario"];$email=$_SESSION["email"];$avatar =$_SESSION["avatar"];

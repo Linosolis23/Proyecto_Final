@@ -43,7 +43,7 @@ if($_GET["mensaje"]=='0'){
   <nav class="menu">
 <ul>
 <li class="active"><a href="index.php">Home</a></li>
-<li><a href="php/temas.php">Crear Posts</a></li>
+<li><a href="php/temas.php">Crear Tema</a></li>
 <li><a href="php/categorias.php">Crear Categorias</a></li>
 <li><a href="php/todoslostemas.php">Todos los temas</a></li>
 <li><a href="php/todaslascategorias.php">Todas las Categorias</a></li>

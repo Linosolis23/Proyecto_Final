@@ -29,7 +29,7 @@ $resultado=$BaseDatos->mostrartodaslascategorias();
   <nav class="menu">
 <ul>
 <li><a href="../index.php">Home</a></li>
-<li><a href="temas.php">Crear Posts</a></li>
+<li><a href="temas.php">Crear Temas</a></li>
 <li><a href="categorias.php">Crear Categorias</a></li>
 <li><a href="todoslostemas.php">Todos los temas</a></li>
 <li class="active"><a href="todaslascategorias.php">Todas las Categorias</a></li>
