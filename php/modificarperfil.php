@@ -1,5 +1,5 @@
 <?php
-
+echo '<link rel="icon" type="image/x-icon" href="../cosas_necesarias/favicon.ico">';    
 session_start();
 error_reporting(0);
 require 'lib/consultas.php';

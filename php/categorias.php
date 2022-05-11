@@ -1,4 +1,6 @@
 <?php 
+echo '<link rel="icon" type="image/x-icon" href="../cosas_necesarias/favicon.ico">';    
+
 require 'lib/consultas.php';
 session_start();
 
